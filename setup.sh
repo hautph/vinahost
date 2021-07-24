@@ -74,6 +74,7 @@ echo "installing apps"
 install_3proxy
 
 echo "working folder = /home/vinahost/"
+rm -rf /home/vinahost
 WORKDIR="/home/vinahost"
 WORKDATA="${WORKDIR}/data.txt"
 mkdir $WORKDIR && cd $_
