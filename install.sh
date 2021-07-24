@@ -96,6 +96,5 @@ bash ${WORKDIR}/boot_ifconfig.sh
 ulimit -n 10048
 service 3proxy start
 EOF
-:q
-:q:Q
+
 gen_proxy_file_for_user
