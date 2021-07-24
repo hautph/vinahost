@@ -19,8 +19,6 @@ install_3proxy() {
     cd 3proxy-0.9.4
     make -f Makefile.Linux
     mkdir -p /etc/3proxy/{bin,logs,stat}
-    /usr/bin/killall 3proxy
-    rm -rf /bin/3proxy
     cp ./bin/3proxy /bin/3proxy
     cp ./scripts/init.d/3proxy.sh /etc/init.d/3proxy
     chmod +x /etc/init.d/3proxy
@@ -77,7 +75,6 @@ echo "installing apps"
 install_3proxy
 
 echo "working folder = /home/vinahost/"
-rm -rf /home/vinahost
 WORKDIR="/home/vinahost"
 WORKDATA="${WORKDIR}/data.txt"
 mkdir $WORKDIR && cd $_
