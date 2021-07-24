@@ -14,9 +14,9 @@ gen64() {
 install_3proxy() {
     echo "installing 3proxy"
     yum -y install wget make gcc net-tools bsdtar zip >/dev/null
-    URL="https://raw.githubusercontent.com/tobrother272/px/master/3proxy-3proxy-0.8.6.tar.gz"
+    URL="https://github.com/hautph/vinahost/blob/main/3proxy-0.9.4.tar.gz"
     wget -qO- $URL | bsdtar -xvf-
-    cd 3proxy-3proxy-0.8.6
+    cd 3proxy-0.9.4
     make -f Makefile.Linux
     mkdir -p /usr/local/etc/3proxy/{bin,logs,stat}
     cp src/3proxy /usr/local/etc/3proxy/bin/
