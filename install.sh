@@ -78,8 +78,6 @@ WORKDIR="/home/vinahost"
 WORKDATA="${WORKDIR}/data.txt"
 mkdir $WORKDIR && cd $_
 
-echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
-
 echo "How many proxy do you want to create? Example 500"
 read COUNT
 
@@ -89,7 +87,6 @@ LAST_PORT=$(($FIRST_PORT + $COUNT))
 gen_data >$WORKDIR/data.txt
 gen_iptables >$WORKDIR/boot_iptables.sh
 gen_ifconfig >$WORKDIR/boot_ifconfig.sh
-chmod +x boot_*.sh /etc/rc.local
 
 gen_3proxy >/etc/3proxy/3proxy.cfg
 
@@ -99,7 +96,6 @@ bash ${WORKDIR}/boot_ifconfig.sh
 ulimit -n 10048
 service 3proxy start
 EOF
-
-bash /etc/rc.local
-
+:q
+:q:Q
 gen_proxy_file_for_user
