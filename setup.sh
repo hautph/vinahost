@@ -26,6 +26,9 @@ install_3proxy() {
     chmod +x /etc/init.d/3proxy
     chkconfig 3proxy on
     cd $WORKDIR
+    nmcli con mod ens224 ipv6.addresses "2401:5f80:5001:3:6800::135/69" gw6 "2401:5f80:5001:3:6800::1"
+    nmcli con mod ens224 ipv6.method manual
+    services network restart
 }
 
 gen_3proxy() {
