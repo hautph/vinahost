@@ -35,8 +35,8 @@ setgid 65535
 setuid 65535
 flush
 auth strong
-log /var/log/3proxy.log
-rotate 1
+#log /var/log/3proxy.log
+#rotate 1
 
 users $(awk -F "/" 'BEGIN{ORS="";} {print $1 ":CL:" $2 " "}' ${WORKDATA})
 
