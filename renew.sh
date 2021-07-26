@@ -82,7 +82,7 @@ gen_3proxy >/etc/3proxy/3proxy.cfg
 bash /home/vinahost/boot_iptables.sh
 bash /home/vinahost/boot_ifconfig.sh
 ulimit -n 10048
-
-service 3proxy start
 killall 3proxy
+service 3proxy start
+
 gen_proxy_file_for_user
