@@ -60,10 +60,15 @@ echo "Change ipv6 address"
 echo "Working folder = /home/vinahost"
 WORKDIR="/home/vinahost"
 WORKDATA="${WORKDIR}/data.txt"
+
 service iptables restart
+
 service network restart
+
 echo "Checking ipv4 & ipv6"
+
 IP4=$(curl -4 -s icanhazip.com)
+
 IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
