@@ -57,12 +57,12 @@ EOF
 }
 echo "Change ipv6 address"
 
-echo "working folder = /home/vinahost"
+echo "Working folder = /home/vinahost"
 WORKDIR="/home/vinahost"
 WORKDATA="${WORKDIR}/data.txt"
 service network restart
 service iptables restart
-
+echo "Checking ipv4 & ipv6"
 IP4=$(curl -4 -s icanhazip.com)
 IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
