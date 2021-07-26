@@ -18,6 +18,7 @@ install_3proxy() {
     cd 3proxy-0.9.4
     make -f Makefile.Linux
     mkdir -p /etc/3proxy/{bin,logs,stat}
+    chmod +x /ect/3proxy/logs/
     cp ./bin/3proxy /bin/3proxy
     cp ./scripts/init.d/3proxy.sh /etc/init.d/3proxy
     chmod +x /etc/init.d/3proxy
@@ -35,6 +36,8 @@ setgid 65535
 setuid 65535
 flush
 auth strong
+log /etc/3proxy/logs/3proxy.log
+rotate 1
 
 users $(awk -F "/" 'BEGIN{ORS="";} {print $1 ":CL:" $2 " "}' ${WORKDATA})
 
