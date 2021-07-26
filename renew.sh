@@ -60,8 +60,6 @@ echo "Change ipv6 address"
 echo "working folder = /home/vinahost"
 WORKDIR="/home/vinahost"
 WORKDATA="${WORKDIR}/data.txt"
-cd 
-rm -rf /etc/rc.d/init.d/3proxy /etc/3proxy /usr/bin/3proxy /home/vinahost/ rm -rf 3proxy-0.9.4/ 
 services network restart
 mkdir $WORKDIR && cd $_
 
