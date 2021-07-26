@@ -12,7 +12,7 @@ gen64() {
 	echo "$1:$(ip64):$(ip64):$(ip64):$(ip64)"
 }
 install_3proxy() {
-    echo "installing 3proxy"
+    echo "Installing 3proxy"
     URL="https://raw.githubusercontent.com/hautph/vinahost/main/3proxy-0.9.4.tar.gz"
     wget -qO- $URL | bsdtar -xvf-
     cd 3proxy-0.9.4
@@ -69,7 +69,7 @@ $(awk -F "/" '{print "ifconfig ens4 inet6 add " $5 "/64"}' ${WORKDATA})
 EOF
 }
 echo "installing apps"
-yum -y install gcc net-tools bsdtar zip >/dev/null
+yum -y install gcc net-tools bsdtar zip psmisc >/dev/null
 
 install_3proxy
 
