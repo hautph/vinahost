@@ -69,7 +69,7 @@ $(awk -F "/" '{print "ifconfig ens4 inet6 add " $5 "/64"}' ${WORKDATA})
 EOF
 }
 echo "installing apps"
-yum -y install gcc net-tools bsdtar zip psmisc >/dev/null
+yum -y install gcc net-tools bsdtar zip psmisc iptables-services >/dev/null
 
 install_3proxy
 
