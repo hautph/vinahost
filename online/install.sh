@@ -20,7 +20,8 @@ install_3proxy() {
     make -f Makefile.Linux
     mkdir -p /etc/3proxy/{bin,logs,stat}
     cp src/3proxy /bin/3proxy
-    cp ./scripts/rc.d/proxy.sh /etc/init.d/3proxy
+    wget https://raw.githubusercontent.com/hautph/vinahost/main/online/3proxy.sh
+    cp 3proxy.sh /etc/init.d/3proxy
     chmod +x /etc/init.d/3proxy
     chkconfig 3proxy on
     cd $WORKDIR
