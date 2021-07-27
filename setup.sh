@@ -79,7 +79,7 @@ WORKDIR="/home/vinahost"
 WORKDATA="${WORKDIR}/data.txt"
 mkdir $WORKDIR && cd $_
 
-service network restart
+#service network restart
 
 echo "Checking ipv4 & ipv6"
 
