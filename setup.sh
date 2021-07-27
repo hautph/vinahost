@@ -69,12 +69,12 @@ gen_ifconfig() {
 $(awk -F "/" '{print "ifconfig ens4 inet6 add " $5 "/64"}' ${WORKDATA})
 EOF
 }
-echo "installing apps"
+echo "Installing apps"
 yum -y install gcc net-tools bsdtar zip psmisc iptables-services >/dev/null
 
 install_3proxy
 
-echo "working folder = /home/vinahost"
+echo "Working folder = /home/vinahost"
 WORKDIR="/home/vinahost"
 WORKDATA="${WORKDIR}/data.txt"
 mkdir $WORKDIR && cd $_
